@@ -5,7 +5,6 @@
 <section class="min-h-screen max-w-6xl mx-auto px-4 md:px-8 py-20">
   <h2 class="text-4xl font-bold text-center text-blue-900 mb-12">My Projects</h2>
 
-  {{-- PROJECT 1 --}}
   <div class="bg-white rounded-2xl shadow-md p-6 mb-10">
     <h3 class="text-xl font-semibold text-blue-800 mb-4">Quickbook Website</h3>
     <div class="relative overflow-hidden rounded-xl border border-gray-300 p-6">
@@ -21,39 +20,47 @@
     </div>
   </div>
 
-  {{-- PROJECT 2 --}}
-  <div class="bg-white rounded-2xl shadow-md p-6 mb-10">
-    <h3 class="text-xl font-semibold text-blue-800 mb-4">Eaftrip Website</h3>
-    <div class="relative overflow-hidden rounded-xl border border-gray-300 p-6">
-      <div class="flex items-center overflow-hidden">
-        <div id="slider2" class="flex items-stretch transition-transform duration-700 ease-in-out">
-          @for ($i = 1; $i <= 5; $i++)
-          <div class="flex-shrink-0 w-64 mr-4 bg-gray-50 rounded-lg p-3 shadow">
-            <img src="{{ asset('foto/wisata' . $i . '.png') }}" alt="wisata{{ $i }}" class="w-full h-40 object-contain rounded-md" />
-          </div>
-          @endfor
+<div class="bg-white rounded-2xl shadow-md p-6 mb-10">
+  <h3 class="text-xl font-semibold text-blue-800 mb-4">Eaftrip Website</h3>
+  <div class="relative overflow-hidden rounded-xl border border-gray-300 p-6">
+    <div class="flex items-center overflow-hidden">
+      <div id="slider2" class="flex items-stretch transition-transform duration-700 ease-in-out">
+        @for ($i = 1; $i <= 5; $i++)
+        <div class="flex-shrink-0 w-64 mr-4 bg-gray-50 rounded-lg p-3 shadow">
+          <img 
+            src="{{ asset('foto/wisata' . $i . '.png') }}" 
+            alt="wisata{{ $i }}" 
+            class="w-full h-40 object-contain rounded-md" 
+            onerror="this.style.display='none';"
+          />
         </div>
+        @endfor
       </div>
     </div>
   </div>
+</div>
 
-  {{-- PROJECT 3 --}}
-  <div class="bg-white rounded-2xl shadow-md p-6 mb-10">
-    <h3 class="text-xl font-semibold text-blue-800 mb-4">Upin Ipin UI</h3>
-    <div class="relative overflow-hidden rounded-xl border border-gray-300 p-6">
-      <div class="flex items-center overflow-hidden">
-        <div id="slider3" class="flex items-stretch transition-transform duration-700 ease-in-out">
-          @for ($i = 1; $i <= 3; $i++)
-          <div class="flex-shrink-0 w-64 mr-4 bg-gray-50 rounded-lg p-3 shadow">
-            <img src="{{ asset('foto/upinipin' . $i . '.png') }}" alt="Upin{{ $i }}" class="w-full h-40 object-contain rounded-md" />
-          </div>
-          @endfor
+
+<div class="bg-white rounded-2xl shadow-md p-6 mb-10">
+  <h3 class="text-xl font-semibold text-blue-800 mb-4">Upin Ipin UI</h3>
+  <div class="relative overflow-hidden rounded-xl border border-gray-300 p-6">
+    <div class="flex items-center overflow-hidden">
+      <div id="slider3" class="flex items-stretch transition-transform duration-700 ease-in-out">
+        @for ($i = 1; $i <= 5; $i++)
+        <div class="flex-shrink-0 w-64 mr-4 bg-gray-50 rounded-lg p-3 shadow">
+          <img 
+            src="{{ asset('foto/upinipin' . $i . '.png') }}" 
+            alt="upinipin{{ $i }}" 
+            class="w-full h-40 object-contain rounded-md" 
+            onerror="this.style.display='none';"
+          />
         </div>
+        @endfor
       </div>
     </div>
   </div>
+</div>
 
-  {{-- PROJECT 4 - MINI CALCULATOR --}}
   <div class="bg-white rounded-2xl shadow-md p-6 mb-10">
     <h3 class="text-xl font-semibold text-blue-800 mb-4">Mini Calculator</h3>
     <div class="bg-gray-100 rounded-xl p-4 border border-gray-300 overflow-auto max-h-96">
@@ -196,24 +203,24 @@ if __name__ == "__main__":
 </section>
 
 <script>
-function setupPingPongSlider(id, step = 1, interval = 3000) {
+function setupPingPongSlider(id, step = 1, interval = 2000) { // ubah interval jadi 2 detik
   const slider = document.getElementById(id);
   if (!slider) return;
 
   const slides = slider.children.length;
   let index = 0;
-  let direction = 1; // 1 ke kanan, -1 ke kiri
+  let direction = 1; 
 
-  const stepSize = slider.children[0].getBoundingClientRect().width + 16; // width + margin
+  const stepSize = slider.children[0].getBoundingClientRect().width + 16; 
 
   setInterval(() => {
     index += step * direction;
 
-    // kalau sampai ujung kanan → balik ke kiri
     if (index >= slides - 3) direction = -1;
-    // kalau sampai ujung kiri → balik ke kanan
     if (index <= 0) direction = 1;
 
+    // Efek transisi halus 1.5 detik
+    slider.style.transition = "transform 1.5s ease-in-out";
     slider.style.transform = `translateX(-${index * stepSize}px)`;
   }, interval);
 }
@@ -224,4 +231,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setupPingPongSlider('slider3');
 });
 </script>
+
 @endsection

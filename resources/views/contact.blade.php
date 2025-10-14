@@ -7,16 +7,9 @@
   <h2 class="text-5xl font-extrabold text-blue-900 mb-16 text-center tracking-wide animate-fadeIn">
     Contact Me 🤝
   </h2>
-
-  <!-- ✨ 2 Kolom Utama -->
   <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-    <!-- 🌐 Kiri: Kontak + Lokasi -->
     <div class="space-y-10">
-
-      <!-- Sosial Media -->
       <div id="contact-cards" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- WhatsApp -->
         <a href="https://wa.me/628xxxxxxxxxx" target="_blank"
            class="contact-card bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-blue-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
           <div class="flex flex-col items-center">
@@ -26,7 +19,6 @@
           </div>
         </a>
 
-        <!-- Instagram -->
         <a href="https://instagram.com/theofany.gladys" target="_blank"
            class="contact-card bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-pink-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
           <div class="flex flex-col items-center">
@@ -36,7 +28,6 @@
           </div>
         </a>
 
-        <!-- Email -->
         <a href="mailto:theofany@example.com"
            class="contact-card bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-blue-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
           <div class="flex flex-col items-center">
@@ -46,7 +37,6 @@
           </div>
         </a>
 
-        <!-- GitHub -->
         <a href="https://github.com/Theofany123" target="_blank"
            class="contact-card bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
           <div class="flex flex-col items-center">
@@ -57,7 +47,6 @@
         </a>
       </div>
 
-      <!-- 📍 Lokasi -->
       <div class="bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl p-6 border border-indigo-200 text-center animate-fadeIn">
         <h3 class="text-2xl font-bold text-blue-800 mb-3">📍 My Location</h3>
         <p class="text-gray-600 mb-4">Currently in <span class="font-semibold text-indigo-600">Makassar, Indonesia</span></p>
@@ -68,7 +57,6 @@
       </div>
     </div>
 
-    <!-- 💬 Kanan: Form Pesan -->
     <div class="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-10 border border-blue-200 animate-fadeIn">
       <h3 class="text-3xl font-bold text-blue-800 mb-6 text-center">💬 Send Me a Message</h3>
       <form class="space-y-6">
@@ -96,7 +84,6 @@
   </div>
 
   <style>
-    /* ✨ Animasi Fade In */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -104,8 +91,6 @@
     .animate-fadeIn {
       animation: fadeIn 1.2s ease forwards;
     }
-
-    /* ✨ Floating Halus */
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
@@ -116,8 +101,6 @@
     .animate-float-delay {
       animation: float 3s ease-in-out 1.5s infinite;
     }
-
-    /* ✨ Scroll Fade-up Cards */
     .contact-card {
       opacity: 0;
       transform: translateY(40px);
@@ -130,7 +113,6 @@
   </style>
 
   <script>
-    // 👀 Fade-up saat scroll
     document.addEventListener("DOMContentLoaded", () => {
       const cards = document.querySelectorAll(".contact-card");
       const observer = new IntersectionObserver((entries) => {
