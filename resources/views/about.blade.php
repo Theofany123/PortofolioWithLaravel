@@ -20,10 +20,10 @@
 
       <h2 class="text-2xl font-semibold text-blue-800 mb-2">🎓 Education</h2>
       <ul class="space-y-1 text-base">
-        <li>2013–2018: SD 060 Polewali</li>
-        <li>2018–2021: SMP Negeri 1 Polewali</li>
-        <li>2021–2024: SMA Negeri 1 Polewali</li>
-        <li>2024–Present: Ciputra University Makassar</li>
+        <li>2013-2018: SD 060 Polewali</li>
+        <li>2018-2021: SMP Negeri 1 Polewali</li>
+        <li>2021-2024: SMA Negeri 1 Polewali</li>
+        <li>2024-Present: Ciputra University Makassar</li>
       </ul>
     </div>
   </div>
@@ -32,30 +32,12 @@
 
   <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Hobbies</h2>
   <div id="hobby-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-    <div class="hobby-item bg-white shadow-lg rounded-2xl p-10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
-      <span class="emoji text-6xl mb-4">🎸🎹</span>
-      <p class="text-xl font-semibold text-blue-800">Playing Music</p>
-    </div>
-    <div class="hobby-item bg-white shadow-lg rounded-2xl p-10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
-      <span class="emoji text-6xl mb-4">🎧</span>
-      <p class="text-xl font-semibold text-purple-700">Listening to Music</p>
-    </div>
-    <div class="hobby-item bg-white shadow-lg rounded-2xl p-10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
-      <span class="emoji text-6xl mb-4">🏸</span>
-      <p class="text-xl font-semibold text-amber-700">Badminton</p>
-    </div>
-    <div class="hobby-item bg-white shadow-lg rounded-2xl p-10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
-      <span class="emoji text-6xl mb-4">🏊</span>
-      <p class="text-xl font-semibold text-green-700">Swimming</p>
-    </div>
-    <div class="hobby-item bg-white shadow-lg rounded-2xl p-10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
-      <span class="emoji text-6xl mb-4">😴</span>
-      <p class="text-xl font-semibold text-red-600">Sleep</p>
-    </div>
-    <div class="hobby-item bg-white shadow-lg rounded-2xl p-10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
-      <span class="emoji text-6xl mb-4">💃</span>
-      <p class="text-xl font-semibold text-pink-700">Dancing</p>
-    </div>
+    @foreach ($hobbies as $hobby)
+      <div class="hobby-item bg-white shadow-lg rounded-2xl p-10 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105">
+        <span class="emoji text-6xl mb-4">{{ $hobby->emoji }}</span>
+        <p class="text-xl font-semibold {{ $hobby->color_class }}">{{ $hobby->name }}</p>
+      </div>
+    @endforeach
   </div>
 
   <hr class="my-12 border-blue-300" />
@@ -69,20 +51,20 @@
       <div class="timeline-item relative flex items-center justify-start opacity-0 translate-y-8 transition-all duration-400">
         <div class="bg-white shadow-lg rounded-2xl p-6 w-5/12 ml-0 mr-auto">
           <h3 class="text-xl font-bold text-blue-700">Student Academy</h3>
-          <p class="text-sm text-gray-600">Sep 2024 – Juni 2025 | Informatic Student Union</p>
+          <p class="text-sm text-gray-600">Sep 2024 - Juni 2025 | Informatic Student Union</p>
         </div>
       </div>
 
       <div class="timeline-item relative flex items-center justify-end opacity-0 translate-y-8 transition-all duration-700">
         <div class="bg-white shadow-lg rounded-2xl p-6 w-5/12 mr-0 ml-auto">
           <h3 class="text-xl font-bold text-blue-700">Connect and Fellowship Division</h3>
-          <p class="text-sm text-gray-600">Oct 2024 – Juni 2025 | Faith Diversity Unity</p>
+          <p class="text-sm text-gray-600">Oct 2024 - Juni 2025 | Faith Diversity Unity</p>
         </div>
       </div>
 
       <div class="timeline-item relative flex items-center justify-start opacity-0 translate-y-8 transition-all duration-700">
         <div class="bg-white shadow-lg rounded-2xl p-6 w-5/12 ml-0 mr-auto">
-          <h3 class="text-xl font-bold text-blue-700">Head of the Committe</h3>
+          <h3 class="text-xl font-bold text-blue-700">Head of the Committee</h3>
           <p class="text-sm text-gray-600">Jun 2025 | Devforge Hackathon UI/UX</p>
         </div>
       </div>
@@ -90,21 +72,21 @@
       <div class="timeline-item relative flex items-center justify-end opacity-0 translate-y-8 transition-all duration-700">
         <div class="bg-white shadow-lg rounded-2xl p-6 w-5/12 mr-0 ml-auto">
           <h3 class="text-xl font-bold text-blue-700">Core Team</h3>
-          <p class="text-sm text-gray-600">Oct 2024 – Present | Google Developer Group On Campus</p>
+          <p class="text-sm text-gray-600">Oct 2024 - Present | Google Developer Group On Campus</p>
         </div>
       </div>
 
       <div class="timeline-item relative flex items-center justify-start opacity-0 translate-y-8 transition-all duration-700">
         <div class="bg-white shadow-lg rounded-2xl p-6 w-5/12 ml-0 mr-auto">
           <h3 class="text-xl font-bold text-blue-700">Marketing Division</h3>
-          <p class="text-sm text-gray-600">Nov 2024 – May 2025 | Entrance 3.0 UC Makassar</p>
+          <p class="text-sm text-gray-600">Nov 2024 - May 2025 | Entrance 3.0 UC Makassar</p>
         </div>
       </div>
 
       <div class="timeline-item relative flex items-center justify-end opacity-0 translate-y-8 transition-all duration-700">
         <div class="bg-white shadow-lg rounded-2xl p-6 w-5/12 mr-0 ml-auto">
           <h3 class="text-xl font-bold text-blue-700">AMD / Advice and Mentoring Department</h3>
-          <p class="text-sm text-gray-600">Dec 2024 – Sep 2025 | Oweek UC Makassar</p>
+          <p class="text-sm text-gray-600">Dec 2024 - Sep 2025 | Oweek UC Makassar</p>
         </div>
       </div>
 
@@ -125,21 +107,21 @@
       <div class="timeline-item relative flex items-center justify-start opacity-0 translate-y-8 transition-all duration-700">
         <div class="bg-white shadow-lg rounded-2xl p-6 w-5/12 ml-0 mr-auto">
           <h3 class="text-xl font-bold text-blue-700">Co Lead</h3>
-          <p class="text-sm text-gray-600">Sept 2025 – Present | Google Developer Group On Campus UC Makassar</p>
+          <p class="text-sm text-gray-600">Sept 2025 - Present | Google Developer Group On Campus UC Makassar</p>
         </div>
       </div>
 
       <div class="timeline-item relative flex items-center justify-end opacity-0 translate-y-8 transition-all duration-700">
         <div class="bg-white shadow-lg rounded-2xl p-6 w-5/12 mr-0 ml-auto">
           <h3 class="text-xl font-bold text-blue-700">President of Organization</h3>
-          <p class="text-sm text-gray-600">Jul 2025 – Present | Informatic Student Union</p>
+          <p class="text-sm text-gray-600">Jul 2025 - Present | Informatic Student Union</p>
         </div>
       </div>
 
       <div class="timeline-item relative flex items-center justify-start opacity-0 translate-y-8 transition-all duration-700">
         <div class="bg-white shadow-lg rounded-2xl p-6 w-5/12 ml-0 mr-auto">
           <h3 class="text-xl font-bold text-blue-700">Secretary</h3>
-          <p class="text-sm text-gray-600">Oktober 2025 – Sekarang | Campjur UC Makassar</p>
+          <p class="text-sm text-gray-600">Oktober 2025 - Sekarang | Campjur UC Makassar</p>
         </div>
       </div>
     </div>
